@@ -1,19 +1,20 @@
 backend:
-  name: github
-  repo: rahmatnovan12/Forest-Guardian
+  name: git-gateway
   branch: main
-media_folder: "public/images"
-public_folder: "/images"
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
 collections:
-  - name: "reports"
-    label: "Laporan Pemantauan Hutan"
-    folder: "content/reports"
+  - name: "blog"
+    label: "Artikel & Publikasi"
+    folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Judul", name: "title", widget: "string"}
-      - {label: "Tanggal", name: "date", widget: "datetime"}
-      - {label: "Kategori", name: "category", widget: "select", options: ["Deforestasi", "Biodiversitas", "Lainnya"]}
-      - {label: "Latitude", name: "lat", widget: "number", value_type: "float"}
-      - {label: "Longitude", name: "lng", widget: "number", value_type: "float"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Judul Artikel", name: "title", widget: "string"}
+      - {label: "Tanggal Rilis", name: "date", widget: "datetime"}
+      - {label: "Foto Utama", name: "thumbnail", widget: "image"}
+      - {label: "Ringkasan Pendek", name: "description", widget: "text"}
+      - {label: "Isi Konten Tulisan", name: "body", widget: "markdown"}
