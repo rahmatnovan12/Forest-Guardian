@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Ini WAJIB agar Next.js membuat file statis
-  basePath: '/Forest-Guardian', // Sesuaikan dengan nama repo Anda
+  output: 'export',
+  basePath: '/Forest-Guardian', 
+  // TAMBAHKAN BARIS DI BAWAH INI:
+  assetPrefix: '/Forest-Guardian/', 
   images: {
-    unoptimized: true, // WAJIB: GitHub Pages tidak mendukung optimasi gambar otomatis Next.js
+    unoptimized: true,
   },
 }
 
