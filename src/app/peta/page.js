@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
 // Load map secara dinamis tanpa Server-Side Rendering untuk mencegah error API Browser
-const DynamicMap = dynamic(() => import('@/components/Map'), { ssr: false })
+const DynamicMap = dynamic(() => import('../../components/Map'), { ssr: false })
 
 export default function PetaPage() {
   const laporanDir = path.join(process.cwd(), 'src/content/laporan')
