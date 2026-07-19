@@ -1,18 +1,13 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import dynamic from 'next/dynamic'
 import Link from 'next/link'
-
-// Kita tetap gunakan dynamic import agar Map bisa mendeteksi browser (window/document)
-// Tanpa 'use client' di file ini, Server akan membaca data, lalu Client akan merender Map.
-const DynamicMap = dynamic(() => import('../../components/Map'), { ssr: false })
+import MapWrapper from '../../components/MapWrapper'
 
 export default function PetaPage() {
   const laporanDir = path.join(process.cwd(), 'src/content/laporan')
   let reports = []
   
-  // Membaca file Markdown dari server
   if (fs.existsSync(laporanDir)) {
     const files = fs.readdirSync(laporanDir)
     reports = files.map(filename => {
@@ -32,8 +27,7 @@ export default function PetaPage() {
         <h1 className="text-4xl font-bold text-forest-dark mb-2">Peta Pemantauan Hutan</h1>
         <p className="text-earth mb-8">Data titik koordinat dari laporan lapangan.</p>
         
-        {/* Peta dimuat di sini, menerima data reports */}
-        <DynamicMap reports={reports} />
+        <MapWrapper reports={reports} />
       </div>
     </main>
   )
