@@ -1,11 +1,10 @@
-// tailwind.config.ts
-export default {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx,mdx}", // Memastikan semua file di dalam src discan
+  ],
   theme: {
-    extend: {
-      colors: {
-        forest: { dark: '#1B4332', light: '#74C69D' },
-        earth: { brown: '#6F4E37', tan: '#EFE6DD' },
-      }
-    }
-  }
+    extend: {},
+  },
+  plugins: [],
 }
