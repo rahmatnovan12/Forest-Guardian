@@ -1,20 +1,28 @@
-import Link from 'next/link'
-
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-8 bg-forest-dark text-white text-center">
-      <h1 className="text-5xl font-bold mb-4 text-forest-light">Forest Guardian</h1>
-      <p className="text-xl mb-8 text-earth-light max-w-2xl">
-        Platform partisipatif untuk pemantauan hutan. Publikasikan laporan lapangan, deforestasi, dan keanekaragaman hayati secara terbuka.
-      </p>
-      <div className="flex flex-col sm:flex-row gap-4">
-        <Link href="/peta" className="px-6 py-3 bg-forest hover:bg-forest-light text-white rounded-lg font-semibold transition-colors">
+    <main className="min-h-screen">
+      {/* Navbar */}
+      <nav className="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+        <h1 className="text-2xl font-bold text-emerald-800">Forest Guardian</h1>
+        <div className="space-x-6 font-medium text-stone-600">
+          <a href="/Forest-Guardian/peta" className="hover:text-emerald-600">Peta</a>
+          <a href="#" className="bg-emerald-700 text-white px-5 py-2 rounded-full hover:bg-emerald-800 transition">Login</a>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <header className="max-w-4xl mx-auto px-6 pt-20 pb-32 text-center">
+        <h2 className="text-5xl md:text-6xl font-extrabold text-stone-900 mb-6 leading-tight">
+          Melindungi Hutan, <br />
+          <span className="text-emerald-600">Menjaga Masa Depan.</span>
+        </h2>
+        <p className="text-xl text-stone-600 mb-10 max-w-2xl mx-auto">
+          Platform pemantauan deforestasi dan pelaporan berbasis data untuk menjaga kelestarian ekosistem kita secara transparan.
+        </p>
+        <a href="/Forest-Guardian/peta" className="inline-block bg-stone-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-stone-700 transition">
           Lihat Peta Pemantauan
-        </Link>
-        <Link href="/admin" className="px-6 py-3 bg-earth hover:bg-earth-dark text-white rounded-lg font-semibold transition-colors">
-          Login Dashboard Tim
-        </Link>
-      </div>
+        </a>
+      </header>
     </main>
   )
 }

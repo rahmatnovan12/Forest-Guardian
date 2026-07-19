@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/Forest-Guardian', // Sesuai nama repo
-  assetPrefix: '/Forest-Guardian/', // PENTING: Ini agar CSS/JS terbaca
+  basePath: '/Forest-Guardian',
+  assetPrefix: '/Forest-Guardian/', 
   images: {
-    unoptimized: true,
+    unoptimized: true, // WAJIB untuk GitHub Pages
   },
 }
+
 export default nextConfig
